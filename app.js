@@ -1,4 +1,3 @@
-//jshint esversion:6
  require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -48,8 +47,6 @@ const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
